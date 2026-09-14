@@ -21,3 +21,11 @@ def listar_cenarios():
         })
 
     return cenarios
+
+def buscar_cenario(identificador: str):
+    with open(CAMINHO_MASSA, "r", encoding="utf-8") as arquivo:
+        massa = json.load(arquivo)
+
+    clientes = massa.get("clientes", {})
+
+    return clientes.get(identificador)
