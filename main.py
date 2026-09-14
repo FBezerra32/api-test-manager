@@ -15,6 +15,28 @@ def carregar_massa():
         return json.load(arquivo)
 
 
+def localizar_cliente(identificador: str, carteira: str):
+    massa = carregar_massa()
+
+    clientes = massa.get("clientes", {})
+
+    if identificador not in clientes:
+        raise HTTPException(
+            status_code=404,
+            detail="Massa não encontrada"
+        )
+
+    cliente = clientes[identificador]
+
+    if cliente.get("carteira") != carteira:
+        raise HTTPException(
+            status_code=404,
+            detail="Carteira não encontrada"
+        )
+
+    return cliente
+
+
 @app.get("/")
 def inicio():
     return {
@@ -27,23 +49,10 @@ def consultar_cliente_cartao(
     identificador: str,
     carteira: str
 ):
-    massa = carregar_massa()
-
-    clientes = massa["clientes"]
-
-    if identificador not in clientes:
-        raise HTTPException(
-            status_code=404,
-            detail="Massa não encontrada"
-        )
-
-    cliente = clientes[identificador]
-
-    if cliente["carteira"] != carteira:
-        raise HTTPException(
-            status_code=404,
-            detail="Carteira não encontrada"
-        )
+    cliente = localizar_cliente(
+        identificador,
+        carteira
+    )
 
     return cliente["identificacao_cartao"]
 
@@ -53,22 +62,9 @@ def segunda_via_cartao(
     identificador: str,
     carteira: str
 ):
-    massa = carregar_massa()
-
-    clientes = massa["clientes"]
-
-    if identificador not in clientes:
-        raise HTTPException(
-            status_code=404,
-            detail="Massa não encontrada"
-        )
-
-    cliente = clientes[identificador]
-
-    if cliente["carteira"] != carteira:
-        raise HTTPException(
-            status_code=404,
-            detail="Carteira não encontrada"
-        )
+    cliente = localizar_cliente(
+        identificador,
+        carteira
+    )
 
     return cliente["segunda_via_cartao"]
