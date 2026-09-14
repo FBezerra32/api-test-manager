@@ -3,6 +3,9 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 
+from app.routes.scenarios import router as scenarios_router
+
+
 
 app = FastAPI(
     title="API Test Manager",
@@ -10,6 +13,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.include_router(scenarios_router)
 
 BASE_DIR = Path(__file__).resolve().parent
 CAMINHO_MASSA = BASE_DIR / "data" / "massa.json"
