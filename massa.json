@@ -1,0 +1,49 @@
+{
+  "clientes": {
+    "123456789000009": {
+      "carteira": "519",
+      "identificacao_cartao": {
+        "clienteLocalizado": true,
+        "possuiDebitoConta": false,
+        "possuiSegundaVia": false,
+        "PossuiLinhaDigitavel": true,
+        "quantidadeDividas": 2,
+        "valorTotalDivida": 1500.50,
+        "nomeCliente": "CLIENTE TESTE",
+        "clienteLocalizadoAPICartao": true,
+        "contratos": [
+          {
+            "contratoOrigem": "4111111111111234",
+            "diasAtrasoContrato": 30,
+            "valorTotalDividaContrato": 1000.00,
+            "valorNoVencimentoContrato": 950.00,
+            "valorPrincipalContrato": 950.00,
+            "codigoCarteira": "VISA",
+            "numeroDoCartao": "4111111111111234"
+          },
+          {
+            "contratoOrigem": "5555555555555678",
+            "diasAtrasoContrato": 10,
+            "valorTotalDividaContrato": 500.50,
+            "valorNoVencimentoContrato": 480.00,
+            "valorPrincipalContrato": 480.00,
+            "codigoCarteira": "MASTERCARD",
+            "numeroDoCartao": "5555555555555678"
+          }
+        ]
+      },
+      "segunda_via_cartao": [
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 1 00000000100000",
+          "descricaoBandeira": "VISA",
+          "contratoOrigem": "1234"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 2 00000000050050",
+          "descricaoBandeira": "MASTERCARD",
+          "contratoOrigem": "5678"
+        }
+      ]
+    }
+  }
+}
