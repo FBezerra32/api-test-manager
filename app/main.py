@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 
@@ -10,8 +11,12 @@ app = FastAPI(
 )
 
 
+BASE_DIR = Path(__file__).resolve().parent
+CAMINHO_MASSA = BASE_DIR / "data" / "massa.json"
+
+
 def carregar_massa():
-    with open("massa.json", "r", encoding="utf-8") as arquivo:
+    with open(CAMINHO_MASSA, "r", encoding="utf-8") as arquivo:
         return json.load(arquivo)
 
 
