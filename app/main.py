@@ -1,10 +1,7 @@
-import json
-from pathlib import Path
-
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 
 from app.routes.scenarios import router as scenarios_router
-
+from app.services.scenario_service import localizar_cliente
 
 
 app = FastAPI(
@@ -17,36 +14,6 @@ app = FastAPI(
 )
 
 app.include_router(scenarios_router)
-
-BASE_DIR = Path(__file__).resolve().parent
-CAMINHO_MASSA = BASE_DIR / "data" / "massa.json"
-
-
-def carregar_massa():
-    with open(CAMINHO_MASSA, "r", encoding="utf-8") as arquivo:
-        return json.load(arquivo)
-
-
-def localizar_cliente(identificador: str, carteira: str):
-    massa = carregar_massa()
-
-    clientes = massa.get("clientes", {})
-
-    if identificador not in clientes:
-        raise HTTPException(
-            status_code=404,
-            detail="Massa não encontrada"
-        )
-
-    cliente = clientes[identificador]
-
-    if cliente.get("carteira") != carteira:
-        raise HTTPException(
-            status_code=404,
-            detail="Carteira não encontrada"
-        )
-
-    return cliente
 
 
 @app.get(
