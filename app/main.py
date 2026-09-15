@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from app.routes.scenarios import router as scenarios_router
-from app.services.scenario_service import localizar_cliente
+from app.routes.mocks import router as mocks_router
 
 
 app = FastAPI(
@@ -14,6 +14,7 @@ app = FastAPI(
 )
 
 app.include_router(scenarios_router)
+app.include_router(mocks_router)
 
 
 @app.get(
@@ -27,25 +28,3 @@ def inicio():
         "status": "ok",
         "mensagem": "API Test Manager funcionando!"
     }
-
-
-@app.post(
-    "/ConsultarCliente/Cartao/{identificador}/{carteira}",
-    tags=["Mock API"],
-    summary="Simula consulta de cliente",
-    description="Retorna os dados de identificação configurados para o cenário informado."
-)
-def consultar_cliente_cartao(identificador: str, carteira: str):
-    cliente = localizar_cliente(identificador, carteira)
-    return cliente["identificacao_cartao"]
-
-
-@app.post(
-    "/SegundaViaBoleto/Cartao/{identificador}/{carteira}",
-    tags=["Mock API"],
-    summary="Simula consulta de segunda via",
-    description="Retorna os dados de segunda via configurados para o cenário informado."
-)
-def segunda_via_cartao(identificador: str, carteira: str):
-    cliente = localizar_cliente(identificador, carteira)
-    return cliente["segunda_via_cartao"]
