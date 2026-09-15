@@ -1,6 +1,11 @@
 from fastapi import APIRouter, HTTPException
 
-from app.services.scenario_service import listar_cenarios, buscar_cenario
+from app.services.scenario_service import (
+listar_cenarios, 
+buscar_cenario, 
+criar_cenario as criar_cenario_service
+)
+from app.models.scenario import ScenarioSummary, ScenarioCreate
 
 
 router = APIRouter(
@@ -11,6 +16,7 @@ router = APIRouter(
 
 @router.get(
     "",
+    response_model=list[ScenarioSummary],
     summary="Lista todos os cenários",
     description="Retorna todos os cenários de teste disponíveis na massa de dados.",
     responses={
@@ -49,3 +55,12 @@ def obter_cenario(identificador: str):
         "identificador": identificador,
         **cenario
     }
+    
+@router.post(
+    "",
+    status_code=201,
+    summary="Cria um novo cenário",
+    description="Cria e persiste um novo cenário de teste."
+)
+def criar_cenario(cenario: ScenarioCreate):
+    return criar_cenario_service(cenario)

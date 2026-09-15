@@ -11,7 +11,15 @@ CAMINHO_MASSA = BASE_DIR / "data" / "massa.json"
 def carregar_massa():
     with open(CAMINHO_MASSA, "r", encoding="utf-8") as arquivo:
         return json.load(arquivo)
-
+    
+def salvar_massa(massa):
+    with open(CAMINHO_MASSA, "w", encoding="utf-8") as arquivo:
+        json.dump(
+            massa,
+            arquivo,
+            ensure_ascii=False,
+            indent=2
+        )
 
 def listar_cenarios():
     massa = carregar_massa()
@@ -57,3 +65,28 @@ def localizar_cliente(identificador: str, carteira: str):
         )
 
     return cliente
+
+def criar_cenario(cenario):
+    massa = carregar_massa()
+    clientes = massa.get("clientes", {})
+
+    if cenario.identificador in clientes:
+        raise HTTPException(
+            status_code=409,
+            detail="Já existe um cenário com este identificador"
+        )
+
+    clientes[cenario.identificador] = {
+        "carteira": cenario.carteira,
+        "cenario": cenario.cenario
+    }
+
+    massa["clientes"] = clientes
+
+    salvar_massa(massa)
+
+    return {
+        "identificador": cenario.identificador,
+        "carteira": cenario.carteira,
+        "cenario": cenario.cenario
+    }

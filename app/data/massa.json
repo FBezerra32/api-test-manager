@@ -25,7 +25,6 @@
         }
       ]
     },
-
     "222222222000002": {
       "carteira": "519",
       "cenario": "2_boletos",
@@ -63,161 +62,165 @@
       ]
     },
     "333333333000003": {
-  "carteira": "519",
-  "cenario": "3_boletos",
-  "identificacao_cartao": {
-    "clienteLocalizado": true,
-    "clienteLocalizadoAPICartao": true,
-    "quantidadeDividas": 3,
-    "nomeCliente": "CLIENTE TESTE 3",
-    "contratos": [
-      {
-        "contratoOrigem": "4111111111113333",
-        "diasAtrasoContrato": 30,
-        "codigoCarteira": "VISA",
-        "numeroDoCartao": "4111111111113333"
+      "carteira": "519",
+      "cenario": "3_boletos",
+      "identificacao_cartao": {
+        "clienteLocalizado": true,
+        "clienteLocalizadoAPICartao": true,
+        "quantidadeDividas": 3,
+        "nomeCliente": "CLIENTE TESTE 3",
+        "contratos": [
+          {
+            "contratoOrigem": "4111111111113333",
+            "diasAtrasoContrato": 30,
+            "codigoCarteira": "VISA",
+            "numeroDoCartao": "4111111111113333"
+          },
+          {
+            "contratoOrigem": "5555555555554444",
+            "diasAtrasoContrato": 60,
+            "codigoCarteira": "MASTERCARD",
+            "numeroDoCartao": "5555555555554444"
+          },
+          {
+            "contratoOrigem": "3777777777775555",
+            "diasAtrasoContrato": 90,
+            "codigoCarteira": "AMEX",
+            "numeroDoCartao": "3777777777775555"
+          }
+        ]
       },
-      {
-        "contratoOrigem": "5555555555554444",
-        "diasAtrasoContrato": 60,
-        "codigoCarteira": "MASTERCARD",
-        "numeroDoCartao": "5555555555554444"
+      "segunda_via_cartao": [
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 1 00000000100000",
+          "descricaoBandeira": "VISA",
+          "contratoOrigem": "3333"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 2 00000000200000",
+          "descricaoBandeira": "MASTER",
+          "contratoOrigem": "4444"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 3 00000000300000",
+          "descricaoBandeira": "AMEX",
+          "contratoOrigem": "5555"
+        }
+      ]
+    },
+    "444444444000004": {
+      "carteira": "519",
+      "cenario": "4_boletos",
+      "identificacao_cartao": {
+        "clienteLocalizado": true,
+        "clienteLocalizadoAPICartao": true,
+        "quantidadeDividas": 4,
+        "nomeCliente": "CLIENTE TESTE 4",
+        "contratos": [
+          {
+            "contratoOrigem": "4111111111114441",
+            "diasAtrasoContrato": 20,
+            "codigoCarteira": "VISA",
+            "numeroDoCartao": "4111111111114441"
+          },
+          {
+            "contratoOrigem": "5555555555554442",
+            "diasAtrasoContrato": 40,
+            "codigoCarteira": "MASTERCARD",
+            "numeroDoCartao": "5555555555554442"
+          },
+          {
+            "contratoOrigem": "3777777777774443",
+            "diasAtrasoContrato": 60,
+            "codigoCarteira": "AMEX",
+            "numeroDoCartao": "3777777777774443"
+          },
+          {
+            "contratoOrigem": "6363688888884444",
+            "diasAtrasoContrato": 80,
+            "codigoCarteira": "ELO",
+            "numeroDoCartao": "6363688888884444"
+          }
+        ]
       },
-      {
-        "contratoOrigem": "3777777777775555",
-        "diasAtrasoContrato": 90,
-        "codigoCarteira": "AMEX",
-        "numeroDoCartao": "3777777777775555"
-      }
-    ]
-  },
-  "segunda_via_cartao": [
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 1 00000000100000",
-      "descricaoBandeira": "VISA",
-      "contratoOrigem": "3333"
+      "segunda_via_cartao": [
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 1 00000000100000",
+          "descricaoBandeira": "VISA",
+          "contratoOrigem": "4441"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 2 00000000200000",
+          "descricaoBandeira": "MASTER",
+          "contratoOrigem": "4442"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 3 00000000300000",
+          "descricaoBandeira": "AMEX",
+          "contratoOrigem": "4443"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 4 00000000400000",
+          "descricaoBandeira": "ELO",
+          "contratoOrigem": "4444"
+        }
+      ]
     },
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 2 00000000200000",
-      "descricaoBandeira": "MASTER",
-      "contratoOrigem": "4444"
+    "555555555000005": {
+      "carteira": "519",
+      "cenario": "3_contratos_4_boletos",
+      "identificacao_cartao": {
+        "clienteLocalizado": true,
+        "clienteLocalizadoAPICartao": true,
+        "quantidadeDividas": 3,
+        "nomeCliente": "CLIENTE TESTE INCONSISTENCIA",
+        "contratos": [
+          {
+            "contratoOrigem": "4111111111115501",
+            "diasAtrasoContrato": 20,
+            "codigoCarteira": "VISA",
+            "numeroDoCartao": "4111111111115501"
+          },
+          {
+            "contratoOrigem": "5555555555555502",
+            "diasAtrasoContrato": 40,
+            "codigoCarteira": "MASTERCARD",
+            "numeroDoCartao": "5555555555555502"
+          },
+          {
+            "contratoOrigem": "3777777777775503",
+            "diasAtrasoContrato": 60,
+            "codigoCarteira": "AMEX",
+            "numeroDoCartao": "3777777777775503"
+          }
+        ]
+      },
+      "segunda_via_cartao": [
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 1 00000000100000",
+          "descricaoBandeira": "VISA",
+          "contratoOrigem": "5501"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 2 00000000200000",
+          "descricaoBandeira": "MASTER",
+          "contratoOrigem": "5502"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 3 00000000300000",
+          "descricaoBandeira": "AMEX",
+          "contratoOrigem": "5503"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 4 00000000400000",
+          "descricaoBandeira": "ELO",
+          "contratoOrigem": "9999"
+        }
+      ]
     },
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 3 00000000300000",
-      "descricaoBandeira": "AMEX",
-      "contratoOrigem": "5555"
+    "666666666000006": {
+      "carteira": "519",
+      "cenario": "teste_criacao"
     }
-  ]
-},
-
-  "444444444000004": {
-  "carteira": "519",
-  "cenario": "4_boletos",
-  "identificacao_cartao": {
-    "clienteLocalizado": true,
-    "clienteLocalizadoAPICartao": true,
-    "quantidadeDividas": 4,
-    "nomeCliente": "CLIENTE TESTE 4",
-    "contratos": [
-      {
-        "contratoOrigem": "4111111111114441",
-        "diasAtrasoContrato": 20,
-        "codigoCarteira": "VISA",
-        "numeroDoCartao": "4111111111114441"
-      },
-      {
-        "contratoOrigem": "5555555555554442",
-        "diasAtrasoContrato": 40,
-        "codigoCarteira": "MASTERCARD",
-        "numeroDoCartao": "5555555555554442"
-      },
-      {
-        "contratoOrigem": "3777777777774443",
-        "diasAtrasoContrato": 60,
-        "codigoCarteira": "AMEX",
-        "numeroDoCartao": "3777777777774443"
-      },
-      {
-        "contratoOrigem": "6363688888884444",
-        "diasAtrasoContrato": 80,
-        "codigoCarteira": "ELO",
-        "numeroDoCartao": "6363688888884444"
-      }
-    ]
-  },
-  "segunda_via_cartao": [
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 1 00000000100000",
-      "descricaoBandeira": "VISA",
-      "contratoOrigem": "4441"
-    },
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 2 00000000200000",
-      "descricaoBandeira": "MASTER",
-      "contratoOrigem": "4442"
-    },
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 3 00000000300000",
-      "descricaoBandeira": "AMEX",
-      "contratoOrigem": "4443"
-    },
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 4 00000000400000",
-      "descricaoBandeira": "ELO",
-      "contratoOrigem": "4444"
-    }
-  ]
-}, "555555555000005": {
-  "carteira": "519",
-  "cenario": "3_contratos_4_boletos",
-  "identificacao_cartao": {
-    "clienteLocalizado": true,
-    "clienteLocalizadoAPICartao": true,
-    "quantidadeDividas": 3,
-    "nomeCliente": "CLIENTE TESTE INCONSISTENCIA",
-    "contratos": [
-      {
-        "contratoOrigem": "4111111111115501",
-        "diasAtrasoContrato": 20,
-        "codigoCarteira": "VISA",
-        "numeroDoCartao": "4111111111115501"
-      },
-      {
-        "contratoOrigem": "5555555555555502",
-        "diasAtrasoContrato": 40,
-        "codigoCarteira": "MASTERCARD",
-        "numeroDoCartao": "5555555555555502"
-      },
-      {
-        "contratoOrigem": "3777777777775503",
-        "diasAtrasoContrato": 60,
-        "codigoCarteira": "AMEX",
-        "numeroDoCartao": "3777777777775503"
-      }
-    ]
-  },
-  "segunda_via_cartao": [
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 1 00000000100000",
-      "descricaoBandeira": "VISA",
-      "contratoOrigem": "5501"
-    },
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 2 00000000200000",
-      "descricaoBandeira": "MASTER",
-      "contratoOrigem": "5502"
-    },
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 3 00000000300000",
-      "descricaoBandeira": "AMEX",
-      "contratoOrigem": "5503"
-    },
-    {
-      "linhaDigitavel": "23790.00000 00000.000000 00000.000000 4 00000000400000",
-      "descricaoBandeira": "ELO",
-      "contratoOrigem": "9999"
-    }
-  ]
-}
   }
 }
