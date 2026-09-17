@@ -60,7 +60,18 @@ def obter_cenario(identificador: str):
     "",
     status_code=201,
     summary="Cria um novo cenário",
-    description="Cria e persiste um novo cenário de teste."
+    description="Cria e persiste um novo cenário de teste.",
+    responses={
+        201: {
+            "description": "Cenário criado com sucesso."
+        },
+        409: {
+            "description": "Já existe um cenário com este identificador."
+        },
+        422: {
+            "description": "Dados enviados são inválidos."
+        }
+    }
 )
 def criar_cenario(cenario: ScenarioCreate):
     return criar_cenario_service(cenario)

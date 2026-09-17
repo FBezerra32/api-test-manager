@@ -1,17 +1,26 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, model_validator
 
 class Contrato(BaseModel):
     contratoOrigem: str
-    diasAtrasoContrato: int
+    diasAtrasoContrato: int = Field(ge=0)
     codigoCarteira: str
     numeroDoCartao: str
     
 class IdentificacaoCartao(BaseModel):
     clienteLocalizado: bool
     clienteLocalizadoAPICartao: bool
-    quantidadeDividas: int
+    quantidadeDividas: int = Field(ge=0)
     nomeCliente: str
     contratos: list[Contrato]
+
+    @model_validator(mode="after")
+    def validar_quantidade_dividas(self):
+        if self.quantidadeDividas != len(self.contratos):
+            raise ValueError(
+                "quantidadeDividas deve ser igual à quantidade de contratos"
+            )
+
+        return self
     
 class Boleto(BaseModel):
     linhaDigitavel: str
