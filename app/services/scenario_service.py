@@ -76,17 +76,16 @@ def criar_cenario(cenario):
             detail="Já existe um cenário com este identificador"
         )
 
-    clientes[cenario.identificador] = {
-        "carteira": cenario.carteira,
-        "cenario": cenario.cenario
-    }
+    dados_cenario = cenario.model_dump()
+
+    identificador = dados_cenario.pop("identificador")
+
+    clientes[identificador] = dados_cenario
 
     massa["clientes"] = clientes
-
     salvar_massa(massa)
 
     return {
-        "identificador": cenario.identificador,
-        "carteira": cenario.carteira,
-        "cenario": cenario.cenario
+        "identificador": identificador,
+        **dados_cenario
     }

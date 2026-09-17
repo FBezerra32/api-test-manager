@@ -221,6 +221,42 @@
     "666666666000006": {
       "carteira": "519",
       "cenario": "teste_criacao"
+    },
+    "777777777000007": {
+      "carteira": "519",
+      "cenario": "2_boletos_criado_via_api",
+      "identificacao_cartao": {
+        "clienteLocalizado": true,
+        "clienteLocalizadoAPICartao": true,
+        "quantidadeDividas": 2,
+        "nomeCliente": "CLIENTE TESTE API",
+        "contratos": [
+          {
+            "contratoOrigem": "4111111111117777",
+            "diasAtrasoContrato": 30,
+            "codigoCarteira": "VISA",
+            "numeroDoCartao": "4111111111117777"
+          },
+          {
+            "contratoOrigem": "5555555555558888",
+            "diasAtrasoContrato": 60,
+            "codigoCarteira": "MASTER",
+            "numeroDoCartao": "5555555555558888"
+          }
+        ]
+      },
+      "segunda_via_cartao": [
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 1 00000000100000",
+          "descricaoBandeira": "VISA",
+          "contratoOrigem": "7777"
+        },
+        {
+          "linhaDigitavel": "23790.00000 00000.000000 00000.000000 2 00000000200000",
+          "descricaoBandeira": "MASTER",
+          "contratoOrigem": "8888"
+        }
+      ]
     }
   }
 }
